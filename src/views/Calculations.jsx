@@ -103,7 +103,8 @@ const Calculations = () => {
                 {type === "teenagers" ? (
                   bmi < 5 || bmi >= 85 ? (
                     <span className="text-xl text-gray-600  font-semibold leading-relaxed ">
-                      <strong className="text-bold text-red-500">Uh Oh!</strong> <br />
+                      <strong className="text-bold text-red-500">Uh Oh!</strong>{" "}
+                      <br />
                       You need to
                       {differance.toFixed(2) < 0
                         ? " Loss About " + differance.toFixed(2) * -1 + " KG "
@@ -135,7 +136,8 @@ const Calculations = () => {
                 ) : type === "adults" ? (
                   bmi < 18.5 || bmi >= 25 ? (
                     <span className="text-xl text-gray-600  font-semibold leading-relaxed ">
-                      <strong className="text-bold text-red-500">Uh Oh!</strong> <br />
+                      <strong className="text-bold text-red-500">Uh Oh!</strong>{" "}
+                      <br />
                       You need to
                       {differance.toFixed(2) < 0
                         ? " Loss About " + differance.toFixed(2) * -1 + " KG "
@@ -239,48 +241,48 @@ const Calculations = () => {
     let weightDifference = (targetBMI - bmi) * heightM * heightM;
 
     setDifferance(weightDifference);
-
-    console.log(weightDifference);
   };
 
   return (
     <Layout>
-      <main className="flex flex-col items-center gap-10 pt-10 con">
+      <main className="flex flex-col md:items-center gap-10 pt-10 con">
         <motion.h1
           variants={titleVariants}
           initial="hidden"
           animate="visible"
           className="text-center">
-          <span className="text-3xl text-gray-800 dark:text-white font-semibold leading-relaxed ">
+          <span className="text-lg md:text-3xl text-gray-800 dark:text-white font-semibold leading-relaxed ">
             Calculate your body mass index (BMI) <br /> for {type}:
           </span>
         </motion.h1>
 
-        <div className="flex gap-5">
-          <div className="flex items-center">
-            <span className="text-gray-700 dark:text-white font-semibold text-xl ">
-              Choose your Gender :{" "}
+        <div className="flex gap-5 items-center">
+          <div className="">
+            <span className="text-gray-700 dark:text-white md:font-semibold md:text-xl font-normal text-base ">
+              Choose your Gender :
             </span>
           </div>
+
           <div className="flex gap-7">
             <motion.div
               whileTap={{ scale: 0.9 }}
               onClick={handleGenderClick}
               data-type="men"
               className={
-                "w-[100px] aspect-square rounded-md bg-[#499BD9] p-2 cursor-pointer " +
+                "w-[75px] md:w-[100px] h-[75px] md:h-auto md:aspect-square rounded-md bg-[#499BD9] p-2 cursor-pointer flex flex-col items-center " +
                 `${genderSelected === "men" ? "border-4 border-red-500" : ""}`
               }>
               <span
                 data-type="men"
                 onClick={handleGenderClick}
-                className="font-semibold text-lg">
+                className="md:font-semibold md:text-lg ">
                 Men
               </span>
               <img
                 data-type="men"
                 onClick={handleGenderClick}
                 src={men}
+                className="w-10 h-10 md:w-auto md:h-auto"
                 alt=""
               />
             </motion.div>
@@ -290,16 +292,17 @@ const Calculations = () => {
               onClick={handleGenderClick}
               data-type="women"
               className={
-                "w-[100px] aspect-square rounded-md bg-purple-500 p-2 cursor-pointer " +
+                "w-[75px] md:w-[100px] h-[75px] md:h-auto md:aspect-square rounded-md bg-purple-500 p-2 cursor-pointer flex flex-col items-center " +
                 `${genderSelected === "women" ? "border-4 border-red-500" : ""}`
               }>
               <span
                 data-type="women"
                 onClick={handleGenderClick}
-                className="font-semibold text-lg">
+                className="md:font-semibold md:text-lg">
                 Women
               </span>
               <img
+                className="w-10 h-10 md:w-auto md:h-auto"
                 data-type="women"
                 onClick={handleGenderClick}
                 src={women}
@@ -310,8 +313,8 @@ const Calculations = () => {
         </div>
 
         <div className="flex gap-5">
-          <div className="flex items-center w-[200px]">
-            <span className="text-gray-700 dark:text-white font-semibold text-xl ">
+          <div className="flex items-center w-[150px] md:w-[200px]">
+            <span className="text-gray-700 dark:text-white md:font-semibold md:text-xl font-normal text-base ">
               Enter your weight :
             </span>
           </div>
@@ -333,8 +336,8 @@ const Calculations = () => {
         </div>
 
         <div className="flex gap-5">
-          <div className="flex items-center w-[200px]">
-            <span className="text-gray-700 dark:text-white font-semibold text-xl ">
+          <div className="flex items-center  w-[150px] md:w-[200px]">
+            <span className="text-gray-700 dark:text-white md:font-semibold md:text-xl font-normal text-base ">
               Enter your height :
             </span>
           </div>
@@ -358,8 +361,8 @@ const Calculations = () => {
         <motion.button
           whileTap={{ scale: 0.9 }}
           onClick={() => calculateBMI(weight, height)}
-          className="w-[200px] py-5 rounded-md bg-gradient-to-br from-[#499BD9] to-purple-500  text-white font-semibold">
-          Calculate
+          className="w-[200px] py-5 rounded-md bg-gradient-to-br from-[#499BD9] to-purple-500  text-white font-semibold flex mx-auto text-center">
+          <span className="text-center w-full">Calculate</span>
         </motion.button>
       </main>
 

@@ -41,7 +41,7 @@ const Home = () => {
           initial="hidden"
           animate="visible"
           className=" text-center">
-          <span className="text-5xl text-black dark:text-white font-extrabold leading-relaxed ">
+          <span className="text-3xl md:text-5xl text-black dark:text-white font-extrabold leading-relaxed ">
             Calculate your body <br /> mass index (BMI)
           </span>
         </motion.h1>
@@ -50,16 +50,16 @@ const Home = () => {
           variants={paragraphVariants}
           initial="hidden"
           animate="visible"
-          className="text-gray-800 text-xl dark:text-white">
+          className="text-gray-800 text-base md:text-xl text-center dark:text-white">
           Check your BMI to find out if you're a healthy weight for your height.
         </motion.p>
 
-        <div className="flex gap-5 mt-10">
+        <div className="flex flex-col md:flex-row gap-5 mt-10">
           <motion.button
             variants={ButtonVariants(-100)}
             initial="hidden"
             animate="visible"
-            className="w-[200px] py-5 rounded-md bg-purple-500 text-white font-semibold">
+            className=" w-[250px] md:w-[200px] py-5 rounded-md bg-purple-500 text-white font-semibold">
             <Link to="bmi/adults">Calculate for adults</Link>
           </motion.button>
 
@@ -67,7 +67,7 @@ const Home = () => {
             variants={ButtonVariants(100)}
             initial="hidden"
             animate="visible"
-            className="w-[200px] py-5 rounded-md bg-[#499BD9] text-white font-semibold">
+            className="w-[250px]  md:w-[200px] py-5 rounded-md bg-[#499BD9] text-white font-semibold">
             <Link to="bmi/teenagers">Calculate for teenagers</Link>
           </motion.button>
         </div>

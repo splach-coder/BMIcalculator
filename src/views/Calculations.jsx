@@ -312,10 +312,10 @@ const Calculations = () => {
           </div>
         </div>
 
-        <div className="flex gap-5">
+        <div className="flex items-center gap-2 md:gap-5">
           <div className="flex items-center w-[150px] md:w-[200px]">
             <span className="text-gray-700 dark:text-white md:font-semibold md:text-xl font-normal text-base ">
-              Enter your weight :
+              Enter your weight:
             </span>
           </div>
 
@@ -328,17 +328,17 @@ const Calculations = () => {
                 value={weight}
                 placeholder={0}
                 min={0}
-                className="px-3 py-2 bg-none rounded-sm border border-gray-500 text-black"
+                className="w-[150px] md:w-auto px-3 py-2 bg-white dark:bg-gray-500 rounded-sm border border-gray-500 text-black dark:text-white"
               />
               <span className="text-gray-500 font-semibold ">KG</span>
             </div>
           </div>
         </div>
 
-        <div className="flex gap-5">
+        <div className="flex items-center gap-2 md:gap-5">
           <div className="flex items-center  w-[150px] md:w-[200px]">
             <span className="text-gray-700 dark:text-white md:font-semibold md:text-xl font-normal text-base ">
-              Enter your height :
+              Enter your height:
             </span>
           </div>
 
@@ -351,7 +351,7 @@ const Calculations = () => {
                 value={height}
                 placeholder={0}
                 min={0}
-                className="px-3 py-2 bg-none rounded-sm border border-gray-500 text-black"
+                className="w-[150px] md:w-auto  px-3 py-2 bg-white dark:bg-gray-500 rounded-sm border border-gray-500 text-black dark:text-white"
               />
               <span className="text-gray-500 font-semibold ">CM</span>
             </div>
